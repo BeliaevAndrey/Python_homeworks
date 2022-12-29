@@ -1,6 +1,5 @@
 # 3. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 
-
 def rle_mtd(string: str) -> str:
     """
     Basic logic for encoding

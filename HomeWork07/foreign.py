@@ -20,7 +20,7 @@ def rec_printer(in_instance: dict) -> str:      # Iterator function, uses yield
     if isinstance(in_instance, list):
         for j_v in in_instance:
             if isinstance(j_v, dict):
-                line = f"\"{j_v['id']}\"", *rearrange_name(j_v['Name']), j_v['Dsc'], ', '.join(j_v['Phone'])
+                line = f"{j_v['id']}", *rearrange_name(j_v['Name']), j_v['Dsc'], ', '.join(j_v['Phone'])
                 if line:
                     yield line                  # yielding a result
 
@@ -29,7 +29,7 @@ def csv_exp(out_file: str) -> str:
     out_file += '.csv'
     if storage:
         with open(out_file, 'w', newline='', encoding='utf-8') as out_fl:
-            spam_writer1 = csv.writer(out_fl, dialect='excel', delimiter=';', )
+            spam_writer1 = csv.writer(out_fl, dialect='excel', delimiter=',')
             spam_writer1.writerow(HEADLINE)
             for i in rec_printer(storage):
                 print(*i)
