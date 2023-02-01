@@ -46,7 +46,7 @@ def rle_bck(string: str) -> str:
             break
     return string_out
 
-
+# some changes
 print(rle_mtd('ABCABCABCDDDFFFFFF'))    # from wikipedia 1A1B1C1A1B1C1A1B1C3D6F
 print(rle_mtd('WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWWW'))   # 9W3B24W1B15W
 print(rle_bck(rle_mtd('WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWWW')))
