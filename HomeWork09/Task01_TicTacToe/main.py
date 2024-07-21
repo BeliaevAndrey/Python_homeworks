@@ -51,7 +51,7 @@ def tic_tac_toe() -> None:
                 board_print()
                 print(f'Game over. Игрок {marker[player]} победил.')
                 raise SystemExit
-            if len(used) >= 6:
+            if len(used) >= 9:
                 board_print()
                 print(f'Game over. Места закончились.{used}')
                 raise SystemExit

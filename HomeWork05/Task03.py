@@ -46,8 +46,23 @@ def rle_bck(string: str) -> str:
             break
     return string_out
 
+
+def rle_dec(string: str) -> str:
+    count = ''
+    out_str = ''
+    for i, c in enumerate(string):
+        if c.isdigit():
+            count += c
+        else:
+            out_str += string[i] * int(count)
+            count = ''
+    return out_str
+
+
 # some changes
 print(rle_mtd('ABCABCABCDDDFFFFFF'))    # from wikipedia 1A1B1C1A1B1C1A1B1C3D6F
 print(rle_mtd('WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWWW'))   # 9W3B24W1B15W
 print(rle_bck(rle_mtd('WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWWW')))
+print(rle_dec(rle_mtd('WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWWW')))
 print(rle_bck(rle_mtd('ABCABCABCDDDFFFFFF')))
+print(rle_dec(rle_mtd('ABCABCABCDDDFFFFFF')))
